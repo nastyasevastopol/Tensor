@@ -1,51 +1,35 @@
 import React from 'react';
-import {Header, Field} from './componentsLib.js';
+import Battle from './Battle.js';
 // import './App.css';
 
 class App extends React.Component{
     constructor(props){
         super(props);
-    this.state = {
-        needClick: props.needClick
-    }   
-    // this.school = new School();
-  }
-    computerStep(event){
-        this.setState({needClick: true});
-        console.log(1);
-        // event.stopPropagation();
+        this.state = {
+            battle: [1]
+        }
     }
-    computerStepEnd(){
-        this.setState({needClick: false});
+    /**
+     * обработчик для клика по кнопке "начать заново"
+     * @param {Event} event 
+     */
+    newGame(event){
         // event.stopPropagation();
+        // event.preventDefault();
+        // this.state.battle.splice(0,1);
+        // this.setState({battle:this.state.battle});
+        // this.state.battle.push(2);
+        // this.setState({battle:this.state.battle});
     }
     render() {
-// {/* <Battle />   */}
-        console.log(this.state.needClick);
-        // if (this.state.needToClick){
-            return <div>
-                <Header title='Морской бой' description='Сыграем?' />  
-                    <div id="container" className="container">
-                        <Field type='player' needClick = {this.state.needClick}
-                        computerStepEnd = {this.computerStepEnd.bind(this)}/> 
-                        <Field type='computer' needClick = {false}
-                            computerStep = {this.computerStep.bind(this)}
-                            /> 
-                    </div>  
-                </div>;   
-        // } 
-        // else {
-        //     return <div>
-        //         <Header title='Морской бой' description='Сыграем?' />  
-        //             <div id="container" className="container">
-        //                 <Field type='player' needClick = {false}
-        //                 computerStepEnd = {this.computerStepEnd.bind(this)}/> 
-        //                 <Field type='computer'
-        //                     computerStep = {this.computerStep.bind(this)}
-        //                     /> 
-        //             </div>  
-        //         </div>;   
-        // }
+        //пробовала сделать кнопку - не успела
+  
+    return <div>
+                {this.state.battle.map((battle)=> <Battle id={battle} needClick={false}/>)}
+                <div>
+                    <input className="shell__button form-button" type = "submit" id="newStart" value="Начать заново (я есть, но не работаю)" onClick = {this.newGame.bind(this)}/>
+                </div>
+            </div>;   
     }
 }
 

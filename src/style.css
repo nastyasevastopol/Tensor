@@ -53,20 +53,17 @@ body{
 	display: inline-block;
 	text-transform: uppercase;
 }
-.container{
+.shell__container{
 	width: 100%;
 	max-width: 100%;
-	/* margin: 0 auto; */
-	/* text-align: center; */
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	/* flex-wrap: wrap; */
 }
 .field{
 	flex: 1 1 45%;
 	display: block; 
-	width: 400px;
+	max-width: 400px;
 	height: 400px;
 }
 
@@ -101,13 +98,60 @@ body{
 	object-fit: cover;
 	display: block;
 }
-.square__shoot_disable{
+.disable{
 	display: none;
 }
 .square__shoot_player{
 	background-color: rgba(105, 105, 105,0.5);
 	width: 100%;
 	height: 100%;
+}
+.form-names{
+	position: absolute;
+	/* margin: auto; */
+	top: 20;
+	/* bottom: 0; */
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 1000px;
+	height: 70%;
+	background: white;
+	border-radius: 5%;
+}
+.form-names__string{
+	margin: 40px auto 0px auto;
+	display: flex;
+	justify-content: center;
+}
+.form-label{
+	flex: 0 1 30%;
+}
+.form-input{
+	border-radius: 2%;
+	box-shadow: 0 0 2px rgba(1,1,1,0.5);
+	font-size: 18px;
+	flex: 0 1 50%;
+}
+.shell_whoIsNext{
+	margin: 0px auto 20px auto;
+}
+.form-names__button{
+
+	padding: 10px 10px;
+	min-width: 200px;
+	margin: 0 50px;
+}
+.form-button{
+	font-size: 18px;
+	flex: 0 1 auto;
+	transition: All 0.5s ease;
+	border-radius: 5%;
+}
+.shell__button{
+	padding: 10px 10px;
+	min-width: 200px;
+	margin: 10px 50px;
 }
 /*  __________________________________________________________________________________________________________________________________________________________________ */
 .list{
@@ -127,25 +171,12 @@ body{
 	display: flex;
 	justify-content:space-evenly;
 }
-.form-label{
-	flex: 0 1 50%;
-}
-.form-input{
-	border-radius: 2%;
-	box-shadow: 0 0 2px rgba(1,1,1,0.5);
-	font-size: 18px;
-	flex: 0 1 50%;
-}
+
 .form-edit-students__input{
 	padding: 0 5px;
 	margin: 0 40px;
 }
-.form-button{
-	font-size: 18px;
-	flex: 0 1 auto;
-	transition: All 0.5s ease;
-	border-radius: 5%;
-}
+
 .form-select{
 	font-size: 18px;
 	flex: 0 1 auto;
@@ -287,12 +318,7 @@ transform: rotate(180deg);
 .form-add-person__string{
 	margin: 20px auto 0px auto;
 }
-.form-add-person__button{
 
-	padding: 10px 10px;
-	min-width: 200px;
-	margin: 0 50px;
-}
 .b-popup {
     width: 100%;
     min-height: 100%;
